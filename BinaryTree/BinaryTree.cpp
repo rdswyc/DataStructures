@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
+#include <math.h>
 
 #pragma region Structure
 
@@ -33,6 +34,8 @@ void Clear(Tree *tree);
 bool Contains(Tree tree, TKey key);
 Node *Find(Tree tree, TKey key);
 Node *FindValue(Tree tree, const TValue value);
+Tree Initialize();
+Tree Initialize(TKey key, int size, int height = 0);
 void PrintNode(Node *node);
 void PrintTreeInOrder(Tree tree);
 void PrintTreePostOrder(Tree tree);
@@ -42,11 +45,6 @@ void ShowTree(Tree tree, int height = 0);
 void Remove(Tree *tree, TKey key);
 
 #pragma endregion
-
-Tree Initialize()
-{
-  return NULL;
-}
 
 /* TODO: implement remove */
 int main()
@@ -67,7 +65,7 @@ int main()
       printf("**   1 Add node. 2 Remove node. 3 Clear tree.\n");
       printf("**   4 Find key. 5 Find value. 6 Tree Properties.\n");
       printf("**   7 Print in-order. 8 Print pre-order. 9 Print post-order.\n");
-      printf("**   10 Show paths. 11 Show tree.\n");
+      printf("**   10 Show paths. 11 Show tree. 12 Autofill tree.\n");
       printf("**   0 Exit.\n");
     }
 
@@ -164,6 +162,18 @@ int main()
       printf("Tree horizontal 2D:\n");
       ShowTree(tree, 0);
       break;
+
+    case 12:
+    {
+      printf("Autofill tree.\nEnter tree size: ");
+      int size;
+      scanf("%i", &size);
+      fflush(stdin);
+
+      TKey root = pow(2, size - 1);
+      tree = Initialize(root, size);
+    }
+    break;
 
     default:
       printf("Option not found!");
@@ -297,6 +307,39 @@ Node *FindValue(Tree tree, const TValue value)
     temp = FindValue(tree->right, value);
 
   return temp;
+}
+
+Tree Initialize()
+{
+  return NULL;
+}
+
+TValue Initialize_RandString()
+{
+  int length = 7;
+  TValue text = (TValue)malloc(length);
+
+  for (int i = 0; i < length; i++)
+    sprintf(text + i, "%x", rand() % 16);
+
+  return text;
+}
+
+Tree Initialize(TKey key, int size, int height)
+{
+  Tree tree = Initialize();
+  Add(&tree, key, Initialize_RandString());
+
+  if (height < size - 1)
+  {
+    height++;
+    TKey diff = pow(2, size - height - 1);
+
+    tree->left = Initialize(key - diff, size, height);
+    tree->right = Initialize(key + diff, size, height);
+  }
+
+  return tree;
 }
 
 void PrintNode(Node *node)
