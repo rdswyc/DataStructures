@@ -109,7 +109,7 @@ The binary tree whose height is returned.
 ### Add
 
 Adds a node to a `Tree`, with a key and value. The tree must be a reference to a `Tree` pointer.
-This is a `O(log(n))` operation, since it first needs to find the matching node to then insert a new one.
+This is a `O(log n)` operation, since it first needs to find the matching node to then insert a new one.
 
 ```
 void Add(Tree *tree, TKey key, const TValue value);
@@ -143,7 +143,7 @@ The binary tree to clear.
 ### Contains
 
 Checks if a given `TKey` exists within the `Tree` nodes.
-This is a `O(log(n))` operation, since the tree is balanced and not all nodes need to be searched.
+This is a `O(log n)` operation, since the tree is balanced and not all nodes need to be searched.
 
 ```
 bool Contains(Tree tree, TKey key);
@@ -163,7 +163,7 @@ The key to check.
 ### Find
 
 Finds and returns a `Node` pointer, when a `TKey` exists within the `Tree` nodes.
-This is a `O(log(n))` operation, since the tree is balanced and not all nodes need to be searched.
+This is a `O(log n)` operation, since the tree is balanced and not all nodes need to be searched.
 
 ```
 Node *Find(Tree tree, TKey key);
@@ -310,7 +310,7 @@ The binary tree to show.
 ### Remove
 
 Remove a node from the `Tree`.
-This is a `O(log(n))` operation.
+This is a `O(log n)` operation.
 
 ```
 void Remove(Tree *tree, TKey key);

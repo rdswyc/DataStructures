@@ -37,3 +37,22 @@ For every structure, you will find the standard operations bellow, as well as sp
 - Add
 - Remove
 - Print
+
+## Algorithmic complexity comparison
+
+Comparison table of some common operations in the worst case scenario using the big-O notation.
+
+| Structure | Operation | Complexity |
+| ----------- | ----------- | ----------- |
+| Binary search tree | Add | O(log n) |
+| Binary search tree | Count | O(n) |
+| Binary search tree | Find | O(log n) |
+| Binary search tree | Remove | O(log n) |
+| Queue | Count | O(1) |
+| Queue | Contains | O(n) |
+| Queue | Dequeue | O(1) |
+| Queue | Enqueue | O(1) |
+| Stack | Count | O(1) |
+| Stack | Contains | O(n) |
+| Stack | Pop | O(1) |
+| Stack | Push | O(1) |
