@@ -20,7 +20,7 @@ int main()
     if (option == -1)
     {
       printf("**** Choose an option:  ****\n");
-      printf("**   1 Enqueue. 2 Dequeue. 3 Clear queue.\n");
+      printf("**   1 Enqueue item. 2 Dequeue item. 3 Clear queue.\n");
       printf("**   4 Peek item. 5 Contains item. 6 Items count.\n");
       printf("**   7 Print queue. 8 Autofill queue.\n");
       printf("**   0 Exit.\n");

@@ -8,10 +8,10 @@ Hello there! Here you will find some common data structures and samples. Everyth
 Sample pointer types, with memory allocation and management.
 
 * **Queue**
-First-In-First-Out list, with two internal implementations: one using array and another one using pointers directly.
+First-In-First-Out list, implemented using pointers.
 
 * **Stack**
-Last-In-First-Out list, with two internal implementations: one using array and another one using pointers directly.
+Last-In-First-Out list, implemented using pointers.
 
 * **Linked list**
 List opened in both ends, allowing insertions and removals at any element, as well as searching.
@@ -24,6 +24,9 @@ Additionally, it implements a cool pretty print method.
 
 * **Graph**
 Finite graph with two implementations: one using the adjacent matrix and another one using a linked list.
+
+* **Hashtable**
+An associative array that maps keys to values for fast look-up.
 
 ## Standard operations
 

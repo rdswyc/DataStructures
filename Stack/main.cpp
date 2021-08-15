@@ -20,7 +20,7 @@ int main()
     if (option == -1)
     {
       printf("**** Choose an option:  ****\n");
-      printf("**   1 Push. 2 Pop. 3 Clear stack.\n");
+      printf("**   1 Push item. 2 Pop item. 3 Clear stack.\n");
       printf("**   4 Peek item. 5 Contains item. 6 Items count.\n");
       printf("**   7 Print stack. 8 Autofill stack.\n");
       printf("**   0 Exit.\n");

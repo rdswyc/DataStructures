@@ -1,6 +1,7 @@
 # Binary tree
 
-Binary tree is a data structure where every element has at most two children. Tree elements are also called nodes and every node has a key, and additional value properties.
+Binary tree is a data structure where every element has at most two children.
+Tree elements are also called nodes and every node has a key, and additional value properties.
 
 Nodes with no child nodes are called leaves.
 
@@ -18,7 +19,8 @@ The source code for this solution was divided into three files.
 * `main.cpp` is the entry point of the console program and will call the functions in the header file.
 
 Since there are multiple files, building has to take care of all needed dependencies.
-Thus, build it by running the following command. You should see a `.exe` file was created on the same directory. Click it to run.
+Thus, build it by running the following command. You should see a `.exe` file was created on the same directory.
+Click it to run the console app.
 
 ```
 gcc BinaryTree.cpp main.cpp -o BinaryTree
@@ -28,7 +30,9 @@ gcc BinaryTree.cpp main.cpp -o BinaryTree
 
 This implementation represents a binary search tree, balanced whenever a new node is added.
 
-The structure is so that every `Node` has a `TKey` key and a `TValue` value. For simplicity, the value is set as a `char` pointer but could easily be replaced by any other `struct`, like shown below.
+The structure is so that every `Node` has a `TKey` key and a `TValue` value.
+
+For simplicity, the value is set as a `char` pointer but could easily be replaced by any other `struct`, like shown below.
 
 ```
 typedef struct
@@ -39,7 +43,8 @@ typedef struct
 } TValue;
 ```
 
-In the main program flow, the `TValue` was also limited to 100 characters, for simplicity. Notice the implementation structure and functions do not limit any size and will dynamically allocate memory to the input received.
+In the main program flow, the `TValue` was also limited to 100 characters, for simplicity.
+Notice the implementation structure and functions do not limit any size and will dynamically allocate memory to the input received.
 
 ## Properties
 
@@ -104,7 +109,7 @@ The binary tree whose height is returned.
 ### Add
 
 Adds a node to a `Tree`, with a key and value. The tree must be a reference to a `Tree` pointer.
-This is a `O(log(n))` operation, since we first need to find the matching node to then insert a new one.
+This is a `O(log(n))` operation, since it first needs to find the matching node to then insert a new one.
 
 ```
 void Add(Tree *tree, TKey key, const TValue value);
@@ -137,7 +142,7 @@ The binary tree to clear.
 
 ### Contains
 
-Checks if a `Tkey` exists within the `Tree` nodes.
+Checks if a given `TKey` exists within the `Tree` nodes.
 This is a `O(log(n))` operation, since the tree is balanced and not all nodes need to be searched.
 
 ```
@@ -152,9 +157,12 @@ The binary tree to check for the key.
 `key`
 The key to check.
 
+#### Returns
+`bool` true if an item is found, false otherwise.
+
 ### Find
 
-Finds and returns a `Node` pointer, when a `Tkey` exists within the `Tree` nodes.
+Finds and returns a `Node` pointer, when a `TKey` exists within the `Tree` nodes.
 This is a `O(log(n))` operation, since the tree is balanced and not all nodes need to be searched.
 
 ```
@@ -168,6 +176,9 @@ The binary tree to find the node.
 
 `key`
 The key to search.
+
+#### Returns
+`Node` A pointer to the node found, or `NULL` if not found.
 
 ### FindValue
 
@@ -186,11 +197,14 @@ The binary tree to find the node.
 `value`
 The value to search.
 
+#### Returns
+`Node` A pointer to the node found, or `NULL` if not found.
+
 ### Initialize
 
 Initializes a new instance of the `Tree`.
-In Object-oriented programming, those would be the constructer methods.
-There are two overloads available; the first one will return a null pointer reference, simply initializing an empty tree; the second one will auto fill all the node of the tree with an integer key and a random string value.
+In Object-oriented programming, those would be the constructor methods.
+There are two overloads available; the first one will return a null pointer reference, simply initializing an empty tree; the second one will auto fill all the nodes of the tree with an integer key and a random string value.
 This later approach can be used for testing purposes.
 
 ```
@@ -209,6 +223,9 @@ The optional root node value.
 `height`
 The current height of the node being created.
 It starts with 0 and increases as the tree build up continues.
+
+#### Returns
+`Tree` An instance of a new tree.
 
 ### PrintNode
 
