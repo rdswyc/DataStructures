@@ -35,7 +35,7 @@ bool Contains(Tree tree, TKey key);
 Node *Find(Tree tree, TKey key);
 Node *FindValue(Tree tree, const TValue value);
 Tree Initialize();
-Tree Initialize(TKey key, int size, int height = 0);
+Tree Initialize(int size, TKey root = -1, int height = 0);
 void PrintNode(Node *node);
 void PrintTreeInOrder(Tree tree);
 void PrintTreePostOrder(Tree tree);
@@ -170,8 +170,7 @@ int main()
       scanf("%i", &size);
       fflush(stdin);
 
-      TKey root = pow(2, size - 1);
-      tree = Initialize(root, size);
+      tree = Initialize(size);
     }
     break;
 
@@ -325,18 +324,22 @@ TValue Initialize_RandString()
   return text;
 }
 
-Tree Initialize(TKey key, int size, int height)
+Tree Initialize(int size, TKey root, int height)
 {
   Tree tree = Initialize();
-  Add(&tree, key, Initialize_RandString());
+
+  if (root == -1)
+    root = pow(2, size - 1);
+
+  Add(&tree, root, Initialize_RandString());
 
   if (height < size - 1)
   {
     height++;
     TKey diff = pow(2, size - height - 1);
 
-    tree->left = Initialize(key - diff, size, height);
-    tree->right = Initialize(key + diff, size, height);
+    tree->left = Initialize(size, root - diff, height);
+    tree->right = Initialize(size, root + diff, height);
   }
 
   return tree;
