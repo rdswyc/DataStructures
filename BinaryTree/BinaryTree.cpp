@@ -165,7 +165,7 @@ Tree Initialize(int size, TKey root, int height)
 
 void PrintNode(Node *node)
 {
-  printf("* %i %s\n", node->key, node->value);
+  printf("* %ld %s\n", node->key, node->value);
 }
 
 void PrintTreeInOrder(Tree tree)
@@ -209,7 +209,7 @@ void ShowPathsAuxiliar(Tree tree, TKey paths[], int height = 0)
     if (tree->left == NULL && tree->right == NULL)
     {
       for (int i = 0; i < height; i++)
-        printf("%i ", paths[i]);
+        printf("%ld ", paths[i]);
 
       printf("\n");
     }

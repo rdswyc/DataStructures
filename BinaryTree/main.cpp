@@ -41,7 +41,7 @@ int main()
     {
       printf("Add tree node.\nEnter node key: ");
       TKey key;
-      scanf("%i", &key);
+      scanf("%ld", &key);
       fflush(stdin);
 
       printf("Enter node value: ");
@@ -64,7 +64,7 @@ int main()
     {
       printf("Find node by key.\nEnter key: ");
       TKey key;
-      scanf("%i", &key);
+      scanf("%ld", &key);
 
       Node *node = Find(tree, key);
       if (node != NULL)
