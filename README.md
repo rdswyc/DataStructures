@@ -1,6 +1,6 @@
-# Data Structures in C
+# Data Structures in C/C++
 
-Hello! Here you will find some common data structures and samples. Everything here is build up as simple single file, console apps for simplicity. The main focus of this project is to share data structures, pointers, operations and asymptotic behavior of each solution.
+Hello there! Here you will find some common data structures and samples. Everything is built up as simple single file, console apps for simplicity. The main focus of this project is to share data structures, pointers, operations and asymptotic behavior of each solution.
 
 ## What are the structures included?
 
@@ -19,8 +19,8 @@ There are two internal implementations, one with a simple link to the next eleme
 
 * **Binary tree**
 A balanced binary search tree, with node count, leaves and non-leaves count, height and paths information.
-It is transversed as Breadth First Search (BFS) and Depth First Search (DFS) depending on the scenario.
-It has two search functions, one by key and another one by value. Additionally, it implements a cool pretty print method.
+It has two search functions, one by key and another one by value.
+Additionally, it implements a cool pretty print method.
 
 * **Graph**
 Finite graph with two implementations: one using the adjacent matrix and another one using a linked list.
