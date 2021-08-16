@@ -59,17 +59,11 @@ void Add(Tree *tree, TKey key, TValue value)
     strcpy((*tree)->value, value);
   }
   else if (key < (*tree)->key)
-  {
     Add(&(*tree)->left, key, value);
-  }
   else if (key > (*tree)->key)
-  {
     Add(&(*tree)->right, key, value);
-  }
   else
-  {
     printf("Node already exists!\n");
-  }
 }
 
 void Clear(Tree *tree)

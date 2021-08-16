@@ -216,10 +216,9 @@ List Initialize(int capacity)
 void Print(List list)
 {
   printf("Node - previous - next\n");
+
   for (Node *node = list.first; node != NULL; node = node->next)
-  {
     PrintNode(*node);
-  }
 }
 
 void PrintNode(Node node)

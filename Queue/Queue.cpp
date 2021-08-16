@@ -40,20 +40,16 @@ bool Contains(Queue queue, T item)
 T *Dequeue(Queue *queue)
 {
   if (queue->capacity == 0)
-  {
     return NULL;
-  }
-  else
-  {
-    T item = *Peek(*queue);
-    T *ptr = &item;
 
-    int newSize = --queue->capacity * sizeof(T);
-    memmove(queue->Items, &queue->Items[1], newSize);
-    queue->Items = (T *)realloc(queue->Items, newSize);
+  T item = *Peek(*queue);
+  T *ptr = &item;
 
-    return ptr;
-  }
+  int newSize = --queue->capacity * sizeof(T);
+  memmove(queue->Items, &queue->Items[1], newSize);
+  queue->Items = (T *)realloc(queue->Items, newSize);
+
+  return ptr;
 }
 
 void Enqueue(Queue *queue, T item)
@@ -118,9 +114,7 @@ void Print(Queue queue)
   if (queue.Items != NULL)
   {
     for (int i = 0; i < queue.capacity; i++)
-    {
       PrintItem(queue.Items[i]);
-    }
   }
 }
 

@@ -80,19 +80,15 @@ T *Peek(Stack stack)
 T *Pop(Stack *stack)
 {
   if (stack->capacity == 0)
-  {
     return NULL;
-  }
-  else
-  {
-    T item = *Peek(*stack);
-    T *ptr = &item;
 
-    stack->capacity--;
-    stack->Items = (T *)realloc(stack->Items, stack->capacity * sizeof(T));
+  T item = *Peek(*stack);
+  T *ptr = &item;
 
-    return ptr;
-  }
+  stack->capacity--;
+  stack->Items = (T *)realloc(stack->Items, stack->capacity * sizeof(T));
+
+  return ptr;
 }
 
 void Print(Stack stack)
@@ -100,9 +96,7 @@ void Print(Stack stack)
   if (stack.Items != NULL)
   {
     for (int i = 0; i < stack.capacity; i++)
-    {
       PrintItem(stack.Items[i]);
-    }
   }
 }
 

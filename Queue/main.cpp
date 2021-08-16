@@ -5,6 +5,14 @@
 
 #define INPUT_LENGTH 100
 
+T GetInput(const char *message)
+{
+  printf(message);
+  T input = (T)malloc(INPUT_LENGTH * sizeof(char));
+  scanf("%[^\n]s", input);
+  return input;
+}
+
 int main()
 {
   printf("\n****************************\n");
@@ -38,10 +46,7 @@ int main()
 
     case 1:
     {
-      printf("Enqueue item.\nEnter item value: ");
-      T item = (T)malloc(INPUT_LENGTH * sizeof(char));
-      scanf("%[^\n]s", item);
-
+      T item = GetInput("Enqueue item.\nEnter item value: ");
       Enqueue(&queue, item);
     }
     break;
@@ -49,11 +54,12 @@ int main()
     case 2:
     {
       printf("Dequeue item.\n");
+
       T *item = Dequeue(&queue);
-      if (item != NULL)
-        PrintItem(*item);
-      else
+      if (item == NULL)
         printf("Queue empty!\n");
+      else
+        PrintItem(*item);
     }
     break;
 
@@ -65,19 +71,18 @@ int main()
     case 4:
     {
       printf("Peek at next item.\n");
+
       T *item = Peek(queue);
-      if (item != NULL)
-        PrintItem(*item);
-      else
+      if (item == NULL)
         printf("Queue empty!\n");
+      else
+        PrintItem(*item);
     }
     break;
 
     case 5:
     {
-      printf("Contains item.\nEnter value to search: ");
-      T item = (T)malloc(INPUT_LENGTH * sizeof(char));
-      scanf("%[^\n]s", item);
+      T item = GetInput("Contains item.\nEnter value to search: ");
 
       if (Contains(queue, item))
         printf("Item exists!\n");

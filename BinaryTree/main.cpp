@@ -5,6 +5,14 @@
 
 #define INPUT_LENGTH 100
 
+TValue GetInput(const char *message)
+{
+  printf(message);
+  TValue input = (TValue)malloc(INPUT_LENGTH * sizeof(char));
+  scanf("%[^\n]s", input);
+  return input;
+}
+
 int main()
 {
   printf("\n****************************\n");
@@ -44,10 +52,7 @@ int main()
       scanf("%ld", &key);
       fflush(stdin);
 
-      printf("Enter node value: ");
-      TValue value = (TValue)malloc(INPUT_LENGTH * sizeof(char));
-      scanf("%[^\n]s", value);
-
+      TValue value = GetInput("Enter node value: ");
       Add(&tree, key, value);
     }
     break;
@@ -67,24 +72,22 @@ int main()
       scanf("%ld", &key);
 
       Node *node = Find(tree, key);
-      if (node != NULL)
-        PrintNode(node);
-      else
+      if (node == NULL)
         printf("Node not found!\n");
+      else
+        PrintNode(node);
     }
     break;
 
     case 5:
     {
-      printf("Find node by value.\nEnter value: ");
-      TValue value = (TValue)malloc(INPUT_LENGTH * sizeof(char));
-      scanf("%[^\n]s", value);
+      TValue value = GetInput("Find node by value.\nEnter value: ");
 
       Node *node = FindValue(tree, value);
-      if (node != NULL)
-        PrintNode(node);
-      else
+      if (node == NULL)
         printf("Node not found!\n");
+      else
+        PrintNode(node);
     }
     break;
 
@@ -123,7 +126,7 @@ int main()
 
     case 12:
     {
-      printf("Autofill tree.\nEnter tree size: ");
+      printf("Autofill tree.\nEnter tree height: ");
       int size;
       scanf("%i", &size);
       fflush(stdin);
