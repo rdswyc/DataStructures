@@ -38,25 +38,20 @@ int main()
 
     case 1:
     {
-      printf("Enqueue item.\nEnter item key: ");
-      Item item;
-      scanf("%ld", &item.key);
-      fflush(stdin);
+      printf("Enqueue item.\nEnter item value: ");
+      T item = (T)malloc(INPUT_LENGTH * sizeof(char));
+      scanf("%[^\n]s", item);
 
-      printf("Enter item value: ");
-      item.value = (TValue)malloc(INPUT_LENGTH * sizeof(char));
-      scanf("%[^\n]s", item.value);
-
-      Enqueue(&queue, &item);
+      Enqueue(&queue, item);
     }
     break;
 
     case 2:
     {
       printf("Dequeue item.\n");
-      Item *item = Dequeue(&queue);
+      T *item = Dequeue(&queue);
       if (item != NULL)
-        PrintItem(item);
+        PrintItem(*item);
       else
         printf("Queue empty!\n");
     }
@@ -70,9 +65,9 @@ int main()
     case 4:
     {
       printf("Peek at next item.\n");
-      Item *item = Peek(queue);
+      T *item = Peek(queue);
       if (item != NULL)
-        PrintItem(item);
+        PrintItem(*item);
       else
         printf("Queue empty!\n");
     }
@@ -80,11 +75,11 @@ int main()
 
     case 5:
     {
-      printf("Contains item.\nEnter key to search: ");
-      TKey key;
-      scanf("%ld", &key);
+      printf("Contains item.\nEnter value to search: ");
+      T item = (T)malloc(INPUT_LENGTH * sizeof(char));
+      scanf("%[^\n]s", item);
 
-      if (Contains(queue, key))
+      if (Contains(queue, item))
         printf("Item exists!\n");
       else
         printf("Item not found!\n");

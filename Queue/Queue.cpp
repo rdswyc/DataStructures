@@ -23,13 +23,13 @@ void Clear(Queue *queue)
   queue->Items = NULL;
 }
 
-bool Contains(Queue queue, TKey key)
+bool Contains(Queue queue, T item)
 {
   if (queue.Items != NULL)
   {
     for (int i = 0; i < queue.capacity; i++)
     {
-      if (queue.Items[i].key == key)
+      if (strcmp(queue.Items[i], item) == 0)
         return true;
     }
   }
@@ -37,7 +37,7 @@ bool Contains(Queue queue, TKey key)
   return false;
 }
 
-Item *Dequeue(Queue *queue)
+T *Dequeue(Queue *queue)
 {
   if (queue->capacity == 0)
   {
@@ -45,33 +45,32 @@ Item *Dequeue(Queue *queue)
   }
   else
   {
-    Item item = *Peek(*queue);
-    Item *ptr = &item;
+    T item = *Peek(*queue);
+    T *ptr = &item;
 
-    int newSize = --queue->capacity * sizeof(Item);
+    int newSize = --queue->capacity * sizeof(T);
     memmove(queue->Items, &queue->Items[1], newSize);
-    queue->Items = (Item *)realloc(queue->Items, newSize);
+    queue->Items = (T *)realloc(queue->Items, newSize);
 
     return ptr;
   }
 }
 
-void Enqueue(Queue *queue, Item *item)
+void Enqueue(Queue *queue, T item)
 {
   if (queue->capacity == 0)
   {
     queue->capacity = 1;
-    queue->Items = (Item *)malloc(sizeof(Item));
+    queue->Items = (T *)malloc(sizeof(T));
   }
   else
   {
     queue->capacity++;
-    queue->Items = (Item *)realloc(queue->Items, queue->capacity * sizeof(Item));
+    queue->Items = (T *)realloc(queue->Items, queue->capacity * sizeof(T));
   }
 
-  queue->Items[queue->capacity - 1].key = item->key;
-  queue->Items[queue->capacity - 1].value = (TValue)malloc(strlen(item->value));
-  strcpy(queue->Items[queue->capacity - 1].value, item->value);
+  queue->Items[queue->capacity - 1] = (T)malloc(strlen(item));
+  strcpy(queue->Items[queue->capacity - 1], item);
 }
 
 Queue Initialize()
@@ -82,10 +81,10 @@ Queue Initialize()
   return queue;
 }
 
-TValue Initialize_RandString()
+T Initialize_RandString()
 {
   int length = 7;
-  TValue text = (TValue)malloc(length);
+  T text = (T)malloc(length);
 
   for (int i = 0; i < length; i++)
     sprintf(text + i, "%x", rand() % 16);
@@ -97,21 +96,19 @@ Queue Initialize(int capacity)
 {
   Queue queue;
   queue.capacity = capacity;
-  queue.Items = (Item *)malloc(capacity * sizeof(Item));
+  queue.Items = (T *)malloc(capacity * sizeof(T));
 
   for (int i = 0; i < capacity; i++)
   {
-    queue.Items[i].key = i + 1;
-
-    TValue randStr = Initialize_RandString();
-    queue.Items[i].value = (TValue)malloc(strlen(randStr));
-    strcpy(queue.Items[i].value, randStr);
+    T randStr = Initialize_RandString();
+    queue.Items[i] = (T)malloc(strlen(randStr));
+    strcpy(queue.Items[i], randStr);
   }
 
   return queue;
 }
 
-Item *Peek(Queue queue)
+T *Peek(Queue queue)
 {
   return &queue.Items[0];
 }
@@ -122,14 +119,14 @@ void Print(Queue queue)
   {
     for (int i = 0; i < queue.capacity; i++)
     {
-      PrintItem(&queue.Items[i]);
+      PrintItem(queue.Items[i]);
     }
   }
 }
 
-void PrintItem(Item *item)
+void PrintItem(T item)
 {
-  printf("* %ld %s\n", item->key, item->value);
+  printf("* %s\n", item);
 }
 
 #pragma endregion

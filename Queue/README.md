@@ -24,10 +24,10 @@ gcc Queue.cpp main.cpp -o Queue
 
 This implementation represents a non-linked queue of elements with a capacity field.
 
-The structure is so that every `Item` has a `TKey` key and a `TValue` value.
+The structure is so that every item is of type `T`.
 Remember that a key is not mandatory for a queue, and it may even accept repeated values.
 
-For simplicity, the value is set as a `char` pointer but could easily be replaced by any other `struct`, like shown below.
+For simplicity, the item is set as a `char` pointer but could easily be replaced by any other `struct`, like shown below.
 
 ```
 typedef struct
@@ -35,10 +35,10 @@ typedef struct
   int property1;
   char *property2;
   float property3;
-} TValue;
+} T;
 ```
 
-In the main program flow, the `TValue` was also limited to 100 characters, for simplicity.
+In the main program flow, the `T` was also limited to 100 characters, for simplicity.
 Notice the implementation structure and functions do not limit any size and will dynamically allocate memory to the input received.
 
 ## Properties
@@ -75,20 +75,20 @@ The queue to clear.
 
 ### Contains
 
-Checks if a given `TKey` exists within the `Queue` items.
+Checks if a given item `T` exists within the `Queue` items.
 This is a `O(n)` operation, since all items need to be searched.
 
 ```
-bool Contains(Queue queue, TKey key);
+bool Contains(Queue queue, T item);
 ```
 
 #### Parameters
 
 `queue`
-The queue to check for the key.
+The queue to check for the item.
 
-`key`
-The key to check.
+`item`
+The item to check.
 
 #### Returns
 `bool` true if an item is found, false otherwise.
@@ -99,7 +99,7 @@ Removes the oldest item from the `Queue`, the one that was added first.
 Although this is considered a `O(1)` operation, in theory, the function has to move all the memory blocks one step back, item by item and then free the last one.
 
 ```
-Item *Dequeue(Queue *queue);
+T *Dequeue(Queue *queue);
 ```
 
 #### Parameters
@@ -108,15 +108,15 @@ Item *Dequeue(Queue *queue);
 The queue pointer to remove the item.
 
 #### Returns
-`Item` The removed item from the queue.
+`T` The removed item from the queue.
 
 ### Enqueue
 
-Adds an item to a `Queue`, with a key and value. The queue must be a reference to a `Queue` pointer.
+Adds an item to the end of the `Queue`. The queue must be a reference to a `Queue` pointer.
 This is a `O(1)` operation, since it puts the new item at the end of the queue.
 
 ```
-void Enqueue(Queue *queue, Item *item);
+void Enqueue(Queue *queue, T item);
 ```
 
 #### Parameters
@@ -125,13 +125,13 @@ void Enqueue(Queue *queue, Item *item);
 The queue pointer to add the item.
 
 `item`
-A pointer to the new item to add.
+The new item to add.
 
 ### Initialize
 
 Initializes a new instance of the `Queue`.
 In Object-oriented programming, those would be the constructor methods.
-There are two overloads available; the first one will return an empty queue with capacity zero; the second one will auto fill all the items of the queue with an integer key and a random string value.
+There are two overloads available; the first one will return an empty queue with capacity zero; the second one will auto fill all the items of the queue with a random string value.
 This later approach can be used for testing purposes.
 
 ```
@@ -152,7 +152,7 @@ The capacity of the queue to create, meaning the number of items it will contain
 Function to return the next item to be deleted by calling `Dequeue()`, without removing the element.
 
 ```
-Item *Peek(Queue queue);
+T *Peek(Queue queue);
 ```
 
 #### Parameters
@@ -161,7 +161,7 @@ Item *Peek(Queue queue);
 The queue to peek the item.
 
 #### Returns
-`Item` A pointer to the item within the queue.
+`T` A pointer to the item within the queue.
 
 ### Print
 
@@ -178,14 +178,14 @@ The queue to be printed.
 
 ### PrintItem
 
-Simple function to print a single `Item` to the console.
+Simple function to print a single `T` item to the console.
 This is referenced by the `Print()` method but can also be used externally.
 
 ```
-void PrintItem(Item *item);
+void PrintItem(T item);
 ```
 
 #### Parameters
 
 `item`
-The pointer to an existing queue item.
+An existing queue item to print.

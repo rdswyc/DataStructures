@@ -5,19 +5,12 @@
 
 #pragma region Structure
 
-typedef long TKey;
-typedef char *TValue;
-
-typedef struct item
-{
-  TKey key;
-  TValue value;
-} Item;
+typedef char *T;
 
 typedef struct
 {
   int capacity;
-  Item *Items;
+  T *Items;
 } Queue;
 
 #pragma endregion
@@ -27,14 +20,14 @@ typedef struct
 int Count(Queue queue);
 
 void Clear(Queue *queue);
-bool Contains(Queue queue, TKey key);
-Item *Dequeue(Queue *queue);
-void Enqueue(Queue *queue, Item *item);
+bool Contains(Queue queue, T item);
+T *Dequeue(Queue *queue);
+void Enqueue(Queue *queue, T item);
 Queue Initialize();
 Queue Initialize(int capacity);
-Item *Peek(Queue queue);
+T *Peek(Queue queue);
 void Print(Queue queue);
-void PrintItem(Item *item);
+void PrintItem(T item);
 
 #pragma endregion
 

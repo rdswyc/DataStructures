@@ -8,10 +8,12 @@ Hello there! Here you will find some common data structures and samples. Everyth
 Sample pointer types, with memory allocation and management.
 
 * **Queue**
-First-In-First-Out list, implemented using pointers.
+A First-In-First-Out list, where the first item to be added will be the first one removed.
+It is implemented using pointers. 
 
 * **Stack**
-Last-In-First-Out list, implemented using pointers.
+Last-In-First-Out list, where the last item to be added will be the fist one removed.
+It is implemented using pointers.
 
 * **Linked list**
 List opened in both ends, allowing insertions and removals at any element, as well as searching.

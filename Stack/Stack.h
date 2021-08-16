@@ -5,19 +5,12 @@
 
 #pragma region Structure
 
-typedef long TKey;
-typedef char *TValue;
-
-typedef struct item
-{
-  TKey key;
-  TValue value;
-} Item;
+typedef char *T;
 
 typedef struct
 {
   int capacity;
-  Item *Items;
+  T *Items;
 } Stack;
 
 #pragma endregion
@@ -27,14 +20,14 @@ typedef struct
 int Count(Stack stack);
 
 void Clear(Stack *stack);
-bool Contains(Stack stack, TKey key);
+bool Contains(Stack stack, T item);
 Stack Initialize();
 Stack Initialize(int capacity);
-Item *Peek(Stack stack);
-Item *Pop(Stack *stack);
+T *Peek(Stack stack);
+T *Pop(Stack *stack);
 void Print(Stack stack);
-void PrintItem(Item *item);
-void Push(Stack *stack, Item *item);
+void PrintItem(T item);
+void Push(Stack *stack, T item);
 
 #pragma endregion
 
