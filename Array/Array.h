@@ -11,6 +11,7 @@ typedef char *T;
 
 #pragma region Method headers
 
+void Autofill(T array[], int size);
 void Clear(T array[], int size);
 int IndexOf(T array[], int size, T item);
 int LastIndexOf(T array[], int size, T item);

@@ -6,6 +6,23 @@
 
 #include "Array.h"
 
+T Autofill_RandString()
+{
+  int length = 7;
+  T text = (T)malloc(length);
+
+  for (int i = 0; i < length; i++)
+    sprintf(text + i, "%x", rand() % 16);
+
+  return text;
+}
+
+void Autofill(T array[], int size)
+{
+  for (int i = 0; i < size; i++)
+    array[i] = Autofill_RandString();
+}
+
 void Clear(T array[], int size)
 {
   for (int i = 0; i < size; i++)
