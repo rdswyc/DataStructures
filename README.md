@@ -4,8 +4,8 @@ Hello there! Here you will find some common data structures and samples. Everyth
 
 ## What are the structures included?
 
-* **Pointer, array and matrix**
-Sample pointer types, with memory allocation and management.
+* **Array**
+A collection of similar data items that can be accessed by index.
 
 * **Queue**
 A First-In-First-Out list, where the first item to be added will be the first one removed.
@@ -46,6 +46,9 @@ Comparison table of some common operations in the worst case scenario using the 
 
 | Structure | Operation | Complexity |
 | ----------- | ----------- | ----------- |
+| Array | IndexOf | O(n) |
+| Array | LastIndexOf | O(n) |
+| Array | SetValue | O(1) |
 | Binary search tree | Add | O(log n) |
 | Binary search tree | Count | O(n) |
 | Binary search tree | Find | O(log n) |
