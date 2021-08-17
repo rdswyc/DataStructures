@@ -19,7 +19,7 @@ int main()
   printf("******* Linked List ********\n");
   printf("****************************\n\n");
 
-  List list = Initialize();
+  LinkedList list = Initialize();
 
   int option = -1;
 

@@ -7,7 +7,7 @@
 
 #pragma region Properties
 
-int Count(List list)
+int Count(LinkedList list)
 {
   int count = 0;
 
@@ -17,12 +17,12 @@ int Count(List list)
   return count;
 }
 
-T First(List list)
+T First(LinkedList list)
 {
   return list.first == NULL ? NULL : list.first->value;
 }
 
-T Last(List list)
+T Last(LinkedList list)
 {
   return list.last == NULL ? NULL : list.last->value;
 }
@@ -31,7 +31,7 @@ T Last(List list)
 
 #pragma region Methods
 
-Node *AddAfter(List *list, Node *node, T item)
+Node *AddAfter(LinkedList *list, Node *node, T item)
 {
   if (node == NULL)
     return NULL;
@@ -54,7 +54,7 @@ Node *AddAfter(List *list, Node *node, T item)
   return newNode;
 }
 
-Node *AddBefore(List *list, Node *node, T item)
+Node *AddBefore(LinkedList *list, Node *node, T item)
 {
   if (node == NULL)
     return NULL;
@@ -77,7 +77,7 @@ Node *AddBefore(List *list, Node *node, T item)
   return newNode;
 }
 
-Node *AddFirst(List *list, T item)
+Node *AddFirst(LinkedList *list, T item)
 {
   Node *node = (Node *)malloc(sizeof(Node));
 
@@ -98,7 +98,7 @@ Node *AddFirst(List *list, T item)
   return node;
 }
 
-Node *AddLast(List *list, T item)
+Node *AddLast(LinkedList *list, T item)
 {
   Node *node = (Node *)malloc(sizeof(Node));
 
@@ -119,7 +119,7 @@ Node *AddLast(List *list, T item)
   return node;
 }
 
-void Clear(List *list)
+void Clear(LinkedList *list)
 {
   Node *node = list->first;
 
@@ -135,7 +135,7 @@ void Clear(List *list)
   list->last = NULL;
 }
 
-bool Contains(List list, T item)
+bool Contains(LinkedList list, T item)
 {
   for (Node *n = list.first; n != NULL; n = n->next)
   {
@@ -146,7 +146,7 @@ bool Contains(List list, T item)
   return false;
 }
 
-Node *Find(List list, T item)
+Node *Find(LinkedList list, T item)
 {
   for (Node *n = list.first; n != NULL; n = n->next)
   {
@@ -157,7 +157,7 @@ Node *Find(List list, T item)
   return NULL;
 }
 
-Node *FindLast(List list, T item)
+Node *FindLast(LinkedList list, T item)
 {
   for (Node *n = list.last; n != NULL; n = n->previous)
   {
@@ -168,9 +168,9 @@ Node *FindLast(List list, T item)
   return NULL;
 }
 
-List Initialize()
+LinkedList Initialize()
 {
-  List list;
+  LinkedList list;
   list.first = NULL;
   list.last = NULL;
   return list;
@@ -187,9 +187,9 @@ T Initialize_RandString()
   return text;
 }
 
-List Initialize(int capacity)
+LinkedList Initialize(int capacity)
 {
-  List list = Initialize();
+  LinkedList list = Initialize();
 
   for (int i = 0; i < capacity; i++)
   {
@@ -213,7 +213,7 @@ List Initialize(int capacity)
   return list;
 }
 
-void Print(List list)
+void Print(LinkedList list)
 {
   printf("Node - previous - next\n");
 
@@ -228,7 +228,7 @@ void PrintNode(Node node)
          node.next == NULL ? "-" : node.next->value);
 }
 
-void Remove(List *list, Node *node)
+void Remove(LinkedList *list, Node *node)
 {
   if (list->first != NULL && node != NULL)
   {
@@ -246,7 +246,7 @@ void Remove(List *list, Node *node)
   }
 }
 
-void RemoveFirst(List *list)
+void RemoveFirst(LinkedList *list)
 {
   if (list->first != NULL)
   {
@@ -262,7 +262,7 @@ void RemoveFirst(List *list)
   }
 }
 
-void RemoveLast(List *list)
+void RemoveLast(LinkedList *list)
 {
   if (list->last != NULL)
   {

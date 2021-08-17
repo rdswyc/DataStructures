@@ -50,6 +50,10 @@ Comparison table of some common operations in the worst case scenario using the 
 | Binary search tree | Count | O(n) |
 | Binary search tree | Find | O(log n) |
 | Binary search tree | Remove | O(log n) |
+| Linked list | Add | O(1) |
+| Linked list | Count | O(n) |
+| Linked list | Find | O(n) |
+| Linked list | Remove | O(1) |
 | Queue | Count | O(1) |
 | Queue | Contains | O(n) |
 | Queue | Dequeue | O(1) |

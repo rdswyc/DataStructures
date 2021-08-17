@@ -16,31 +16,31 @@ typedef struct node
 typedef struct
 {
   Node *first, *last;
-} List;
+} LinkedList;
 
 #pragma endregion
 
 #pragma region Method headers
 
-int Count(List list);
-T First(List list);
-T Last(List list);
+int Count(LinkedList list);
+T First(LinkedList list);
+T Last(LinkedList list);
 
-Node *AddAfter(List *list, Node *node, T item);
-Node *AddBefore(List *list, Node *node, T item);
-Node *AddFirst(List *list, T item);
-Node *AddLast(List *list, T item);
-void Clear(List *list);
-bool Contains(List list, T item);
-Node *Find(List list, T item);
-Node *FindLast(List list, T item);
-List Initialize();
-List Initialize(int capacity);
+Node *AddAfter(LinkedList *list, Node *node, T item);
+Node *AddBefore(LinkedList *list, Node *node, T item);
+Node *AddFirst(LinkedList *list, T item);
+Node *AddLast(LinkedList *list, T item);
+void Clear(LinkedList *list);
+bool Contains(LinkedList list, T item);
+Node *Find(LinkedList list, T item);
+Node *FindLast(LinkedList list, T item);
+LinkedList Initialize();
+LinkedList Initialize(int capacity);
 void PrintNode(Node node);
-void Print(List list);
-void Remove(List *list, Node *node);
-void RemoveFirst(List *list);
-void RemoveLast(List *list);
+void Print(LinkedList list);
+void Remove(LinkedList *list, Node *node);
+void RemoveFirst(LinkedList *list);
+void RemoveLast(LinkedList *list);
 
 #pragma endregion
 
