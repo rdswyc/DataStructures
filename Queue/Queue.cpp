@@ -23,13 +23,18 @@ void Clear(Queue *queue)
   queue->Items = NULL;
 }
 
+bool Compare(T item1, T item2)
+{
+  return strcmp(item1, item2) == 0;
+}
+
 bool Contains(Queue queue, T item)
 {
   if (queue.Items != NULL)
   {
     for (int i = 0; i < queue.capacity; i++)
     {
-      if (strcmp(queue.Items[i], item) == 0)
+      if (Compare(queue.Items[i], item))
         return true;
     }
   }

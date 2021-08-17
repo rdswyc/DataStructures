@@ -23,13 +23,18 @@ void Clear(Stack *stack)
   stack->Items = NULL;
 }
 
+bool Compare(T item1, T item2)
+{
+  return strcmp(item1, item2) == 0;
+}
+
 bool Contains(Stack stack, T item)
 {
   if (stack.Items != NULL)
   {
     for (int i = 0; i < stack.capacity; i++)
     {
-      if (strcmp(stack.Items[i], item) == 0)
+      if (Compare(stack.Items[i], item))
         return true;
     }
   }

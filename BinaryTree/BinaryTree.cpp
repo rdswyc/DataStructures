@@ -78,6 +78,11 @@ void Clear(Tree *tree)
   *tree = NULL;
 }
 
+bool Compare(TValue item1, TValue item2)
+{
+  return strcmp(item1, item2) == 0;
+}
+
 bool Contains(Tree tree, TKey key)
 {
   if (tree == NULL)
@@ -109,7 +114,7 @@ Node *FindValue(Tree tree, const TValue value)
   if (tree == NULL)
     return NULL;
 
-  if (strcmp(value, tree->value) == 0)
+  if (Compare(value, tree->value))
     return tree;
 
   Node *temp = FindValue(tree->left, value);

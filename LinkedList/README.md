@@ -192,6 +192,7 @@ The linked list to clear.
 ### Contains
 
 Checks if a given `T` item exists within the `LinkedList` nodes.
+It uses a `Compare(T, T)` function to determine if items are equal.
 This is a `O(n)` operation, since all nodes need to be searched.
 
 ```
@@ -211,7 +212,8 @@ The value to check.
 
 ### Find
 
-Finds and returns a `Node` pointer for the first `T` item existing within the `LinkedList` nodes. It searches sequentially from the fist to the last node.
+Finds and returns a `Node` pointer for the first `T` item existing within the `LinkedList` nodes.
+It searches sequentially from the fist to the last node using a `Compare(T, T)` function to determine if items are equal.
 This is a `O(n)` operation, since all nodes need to be searched.
 
 ```
@@ -228,7 +230,8 @@ The value to check.
 
 ### FindLast
 
-Finds and returns a `Node` pointer for the last `T` item existing within the `LinkedList` nodes. It searches sequentially from the last to the first node.
+Finds and returns a `Node` pointer for the last `T` item existing within the `LinkedList` nodes.
+It searches sequentially from the last to the first node using a `Compare(T, T)` function to determine if items are equal.
 This is a `O(n)` operation, since all nodes need to be searched.
 
 ```

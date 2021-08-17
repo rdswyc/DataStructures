@@ -76,6 +76,7 @@ The queue to clear.
 ### Contains
 
 Checks if a given item `T` exists within the `Queue` items.
+It uses a `Compare(T, T)` function to determine if items are equal.
 This is a `O(n)` operation, since all items need to be searched.
 
 ```
