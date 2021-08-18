@@ -81,6 +81,27 @@ The array to clear.
 `size`
 The size of the array.
 
+### CompareItems
+
+Utility to compare two `T` items, and determine if `item1` is lower, greater or equal to `item2`.
+This is used by the `BinarySearch()` and `Sort()` functions but can also be used externally.
+
+```
+int CompareItems(T item1, T item2);
+```
+
+#### Parameters
+
+`item1`
+First array item to compare.
+
+`item2`
+Second array item to compare.
+
+#### Returns
+
+`int` the result of the comparison where negative means `item1` is lower than `item2`, positive means `item1` is greater than `item2` and zero when they are equal.
+
 ### IndexOf
 
 Checks if a given item `T` exists within the `T[]` array and returns the first index of it.
@@ -200,8 +221,9 @@ The value to set.
 
 ### Sort
 
-Method to sort the array using some of the most known algorithms.
-It will initially prompt the user to choose the sorting algorithm and proceed with the selected option.
+Method to sort the array using some of the most known algorithms:
+buble sort, selection sort, insertion sort, merge sort and quick sort.
+It will initially prompt the user to choose the algorithm and proceed with the selected option.
 Prior to sorting the array, you need to make sure there are no null items.
 Most of the sorting functions are a `O(n^2)` operation in the worst case, but there might be differences if the array is already sorted, partially sorted or in a total reverse order.
 
@@ -219,7 +241,7 @@ The size of the array.
 
 ### SwapItems
 
-Utility to swap two `T` items, using a temporary variable allocation, and resizing each of the items.
+Utility to swap two `T` items, using a temporary variable allocation.
 This is used by the `Reverse()` and `Sort()` functions but can also be used externally.
 
 ```

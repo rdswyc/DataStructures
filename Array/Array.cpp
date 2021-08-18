@@ -29,6 +29,14 @@ void Clear(T array[], int size)
     array[i] = NULL;
 }
 
+int CompareItems(T item1, T item2)
+{
+  if (item1 == NULL && item2 == NULL)
+    return 0;
+  else
+    return strcmp(item1, item2);
+}
+
 bool Equals(T item1, T item2)
 {
   return item1 != NULL && item2 != NULL && strcmp(item1, item2) == 0;
@@ -86,9 +94,6 @@ void SwapItems(T item1, T item2)
   T temp = (T)malloc(strlen(item1));
   strcpy(temp, item1);
 
-  item1 = (T)realloc(item1, strlen(item2));
   strcpy(item1, item2);
-
-  item2 = (T)realloc(item2, strlen(item1));
   strcpy(item2, temp);
 }

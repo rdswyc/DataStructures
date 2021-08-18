@@ -13,6 +13,7 @@ typedef char *T;
 
 void Autofill(T array[], int size);
 void Clear(T array[], int size);
+int CompareItems(T item1, T item2);
 int IndexOf(T array[], int size, T item);
 int LastIndexOf(T array[], int size, T item);
 void Print(T array[], int size);
