@@ -19,6 +19,8 @@ void Print(T array[], int size);
 void PrintItem(T item);
 void Reverse(T array[], int size);
 void SetValue(T array[], int index, T value);
+void Sort(T array[], int size);
+void SwapItems(T item1, T item2);
 
 #pragma endregion
 

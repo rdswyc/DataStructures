@@ -11,6 +11,7 @@ Elements can be of any type and will each have a sequential index.
 The source code for this solution was divided into three files.
 * `Array.h` is the header file, with the structures and the function signatures, to hide internal implementation details.
 * `Array.cpp` imports and implements the header file, with the all the underlying logic.
+* `Sort.cpp` imports the header file and implements the sorting methods.
 * `main.cpp` is the entry point of the console program and will call the functions in the header file.
 
 Since there are multiple files, building has to take care of all needed dependencies.
@@ -18,7 +19,7 @@ Thus, build it by running the following command. You should see a `.exe` file wa
 Click it to run the console app.
 
 ```
-gcc Array.cpp main.cpp -o Array
+gcc Array.cpp Sort.cpp main.cpp -o Array
 ```
 
 ## Remarks
@@ -162,7 +163,7 @@ An existing array item to print.
 
 ### Reverse
 
-Reverses the order of items in the `T[]` array.
+Reverses the order of items in the `T[]` array using a `SwapItems(T, T)` function.
 This is a `O(n)` operation, even considering that two items are changed together in a single iteration.
 
 ```
@@ -196,3 +197,39 @@ The index of the item to set.
 
 `value`
 The value to set.
+
+### Sort
+
+Method to sort the array using some of the most known algorithms.
+It will initially prompt the user to choose the sorting algorithm and proceed with the selected option.
+Prior to sorting the array, you need to make sure there are no null items.
+Most of the sorting functions are a `O(n^2)` operation in the worst case, but there might be differences if the array is already sorted, partially sorted or in a total reverse order.
+
+```
+void Sort(T array[], int size);
+```
+
+#### Parameters
+
+`array`
+The array to sort.
+
+`size`
+The size of the array.
+
+### SwapItems
+
+Utility to swap two `T` items, using a temporary variable allocation, and resizing each of the items.
+This is used by the `Reverse()` and `Sort()` functions but can also be used externally.
+
+```
+void SwapItems(T item1, T item2);
+```
+
+#### Parameters
+
+`item1`
+An array item to swap.
+
+`item2`
+Another array item to swap.

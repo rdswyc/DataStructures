@@ -49,6 +49,7 @@ Comparison table of some common operations in the worst case scenario using the 
 | Array | IndexOf | O(n) |
 | Array | LastIndexOf | O(n) |
 | Array | SetValue | O(1) |
+| Array | Sort | O(n^2) |
 | Binary search tree | Add | O(log n) |
 | Binary search tree | Count | O(n) |
 | Binary search tree | Find | O(log n) |

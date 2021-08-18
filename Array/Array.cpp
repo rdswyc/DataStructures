@@ -73,14 +73,22 @@ void PrintItem(T item)
 void Reverse(T array[], int size)
 {
   for (int i = 0; i < size / 2; i++)
-  {
-    T temp = array[i];
-    array[i] = array[size - i - 1];
-    array[size - i - 1] = temp;
-  }
+    SwapItems(array[i], array[size - i - 1]);
 }
 
 void SetValue(T array[], int index, T value)
 {
   array[index] = value;
+}
+
+void SwapItems(T item1, T item2)
+{
+  T temp = (T)malloc(strlen(item1));
+  strcpy(temp, item1);
+
+  item1 = (T)realloc(item1, strlen(item2));
+  strcpy(item1, item2);
+
+  item2 = (T)realloc(item2, strlen(item1));
+  strcpy(item2, temp);
 }

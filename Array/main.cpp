@@ -34,7 +34,7 @@ int main()
       printf("\n**** Choose an option:  ****\n");
       printf("**   1 Set value. 2 Reset value. 3. Clear array\n");
       printf("**   4 Index of. 5 Last index of. 6 Print array.\n");
-      printf("**   7 Reverse array. 8 Autofill array.\n");
+      printf("**   7 Reverse array. 8 Sort array. 9 Autofill array.\n");
       printf("**   0 Exit.\n");
     }
 
@@ -111,6 +111,11 @@ int main()
       break;
 
     case 8:
+      printf("Sort array.\n");
+      Sort(array, size);
+      break;
+
+    case 9:
       printf("Autofill array.\n");
       Autofill(array, size);
       break;
