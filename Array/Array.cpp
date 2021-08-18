@@ -29,7 +29,7 @@ void Clear(T array[], int size)
     array[i] = NULL;
 }
 
-bool Compare(T item1, T item2)
+bool Equals(T item1, T item2)
 {
   return item1 != NULL && item2 != NULL && strcmp(item1, item2) == 0;
 }
@@ -38,7 +38,7 @@ int IndexOf(T array[], int size, T item)
 {
   for (int i = 0; i < size; i++)
   {
-    if (Compare(array[i], item))
+    if (Equals(array[i], item))
       return i;
   }
 
@@ -49,7 +49,7 @@ int LastIndexOf(T array[], int size, T item)
 {
   for (int i = size - 1; i >= 0; i--)
   {
-    if (Compare(array[i], item))
+    if (Equals(array[i], item))
       return i;
   }
 

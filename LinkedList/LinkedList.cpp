@@ -135,7 +135,7 @@ void Clear(LinkedList *list)
   list->last = NULL;
 }
 
-bool Compare(T item1, T item2)
+bool Equals(T item1, T item2)
 {
   return strcmp(item1, item2) == 0;
 }
@@ -144,7 +144,7 @@ bool Contains(LinkedList list, T item)
 {
   for (Node *n = list.first; n != NULL; n = n->next)
   {
-    if (Compare(n->value, item))
+    if (Equals(n->value, item))
       return true;
   }
 
@@ -155,7 +155,7 @@ Node *Find(LinkedList list, T item)
 {
   for (Node *n = list.first; n != NULL; n = n->next)
   {
-    if (Compare(n->value, item))
+    if (Equals(n->value, item))
       return n;
   }
 
@@ -166,7 +166,7 @@ Node *FindLast(LinkedList list, T item)
 {
   for (Node *n = list.last; n != NULL; n = n->previous)
   {
-    if (Compare(n->value, item))
+    if (Equals(n->value, item))
       return n;
   }
 

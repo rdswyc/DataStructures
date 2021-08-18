@@ -23,7 +23,7 @@ void Clear(Queue *queue)
   queue->Items = NULL;
 }
 
-bool Compare(T item1, T item2)
+bool Equals(T item1, T item2)
 {
   return strcmp(item1, item2) == 0;
 }
@@ -34,7 +34,7 @@ bool Contains(Queue queue, T item)
   {
     for (int i = 0; i < queue.capacity; i++)
     {
-      if (Compare(queue.Items[i], item))
+      if (Equals(queue.Items[i], item))
         return true;
     }
   }

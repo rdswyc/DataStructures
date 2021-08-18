@@ -83,7 +83,7 @@ The size of the array.
 ### IndexOf
 
 Checks if a given item `T` exists within the `T[]` array and returns the first index of it.
-It uses a `Compare(T, T)` function to determine if items are equal.
+It uses a `Equals(T, T)` function to determine if items are equal.
 If the item is not found, it returns `-1`.
 This is a `O(n)` operation, since all items need to be searched.
 
@@ -108,7 +108,7 @@ The item to get the index.
 ### LastIndexOf
 
 Checks if a given item `T` exists within the `T[]` array and returns the last index of it.
-It uses a `Compare(T, T)` function to determine if items are equal.
+It uses a `Equals(T, T)` function to determine if items are equal.
 If the item is not found, it returns `-1`.
 This is a `O(n)` operation, since all items need to be searched.
 

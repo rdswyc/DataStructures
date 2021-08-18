@@ -183,7 +183,7 @@ The key to search.
 ### FindValue
 
 Finds and returns a `Node` pointer, based on a `TValue`, which can be a static string or a pointer to a character array.
-It uses a `Compare(TValue, TValue)` function to determine if items are equal.
+It uses a `Equals(TValue, TValue)` function to determine if items are equal.
 This is a `O(n)` operation, because all nodes need to be searched.
 
 ```
@@ -283,7 +283,7 @@ The binary tree to be printed.
 
 ### ShowPaths
 
-Utility to print all the root-to-leaf paths for the `Tree`.
+Utility to print all the root-to-leaf paths for the `Tree`. It uses a Depth First Search.
 For a compact display, it will only print the keys.
 
 ```
