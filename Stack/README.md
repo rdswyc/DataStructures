@@ -92,6 +92,7 @@ The stack to check for the item.
 The item to check.
 
 #### Returns
+
 `bool` true if an item is found, false otherwise.
 
 ### Initialize
@@ -112,6 +113,7 @@ Stack Initialize(int capacity);
 The capacity of the stack to create, meaning the number of items it will contain.
 
 #### Returns
+
 `Stack` An instance of a new stack.
 
 ### Peek
@@ -128,6 +130,7 @@ T *Peek(Stack stack);
 The stack to peek the item.
 
 #### Returns
+
 `T` A pointer to the item within the stack.
 
 ### Pop
@@ -145,6 +148,7 @@ T *Pop(Stack *stack);
 The stack pointer to remove the item.
 
 #### Returns
+
 `T` The removed item from the stack.
 
 ### Print

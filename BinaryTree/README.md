@@ -158,6 +158,7 @@ The binary tree to check for the key.
 The key to check.
 
 #### Returns
+
 `bool` true if an item is found, false otherwise.
 
 ### Find
@@ -178,6 +179,7 @@ The binary tree to find the node.
 The key to search.
 
 #### Returns
+
 `Node` A pointer to the node found, or `NULL` if not found.
 
 ### FindValue
@@ -199,6 +201,7 @@ The binary tree to find the node.
 The value to search.
 
 #### Returns
+
 `Node` A pointer to the node found, or `NULL` if not found.
 
 ### Initialize
@@ -226,6 +229,7 @@ The current height of the node being created.
 It starts with 0 and increases as the tree build up continues.
 
 #### Returns
+
 `Tree` An instance of a new tree.
 
 ### PrintNode

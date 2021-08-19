@@ -87,6 +87,7 @@ The size of the array.
 The item to get the index.
 
 #### Returns
+
 `int` the first index of the item in the sorted array, or `-1` if not found.
 
 ### Clear
@@ -150,6 +151,7 @@ The size of the array.
 The item to get the index.
 
 #### Returns
+
 `int` the first index of the item in the array, or `-1` if not found.
 
 ### LastIndexOf
@@ -175,6 +177,7 @@ The size of the array.
 The item to get the last index.
 
 #### Returns
+
 `int` the last index of the item in the array, or `-1` if not found.
 
 ### Print

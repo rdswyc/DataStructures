@@ -92,6 +92,7 @@ The queue to check for the item.
 The item to check.
 
 #### Returns
+
 `bool` true if an item is found, false otherwise.
 
 ### Dequeue
@@ -109,6 +110,7 @@ T *Dequeue(Queue *queue);
 The queue pointer to remove the item.
 
 #### Returns
+
 `T` The removed item from the queue.
 
 ### Enqueue
@@ -146,6 +148,7 @@ Queue Initialize(int capacity);
 The capacity of the queue to create, meaning the number of items it will contain.
 
 #### Returns
+
 `Queue` An instance of a new queue.
 
 ### Peek
@@ -162,6 +165,7 @@ T *Peek(Queue queue);
 The queue to peek the item.
 
 #### Returns
+
 `T` A pointer to the item within the queue.
 
 ### Print

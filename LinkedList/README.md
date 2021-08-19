@@ -110,6 +110,7 @@ A pointer to an existing node within the list.
 The value of the new node.
 
 #### Returns
+
 `Node` A pointer to the node added.
 
 ### AddBefore
@@ -133,6 +134,7 @@ A pointer to an existing node within the list.
 The value of the new node.
 
 #### Returns
+
 `Node` A pointer to the node added.
 
 ### AddFirst
@@ -153,6 +155,7 @@ The list pointer to add the node.
 The value of the new node.
 
 #### Returns
+
 `Node` A pointer to the node added.
 
 ### AddLast
@@ -173,6 +176,7 @@ The list pointer to add the node.
 The value of the new node.
 
 #### Returns
+
 `Node` A pointer to the node added.
 
 ### Clear
@@ -208,6 +212,7 @@ The linked list to check for the item.
 The value to check.
 
 #### Returns
+
 `bool` true if an item is found, false otherwise.
 
 ### Find
@@ -247,6 +252,7 @@ The linked list to find the node.
 The value to check.
 
 #### Returns
+
 `Node` A pointer to the node found, or `NULL` if not found.
 
 ### Initialize
@@ -267,6 +273,7 @@ LinkedList Initialize(int capacity);
 The size of the linked list to create, meaning the number of nodes from the fist to the last nodes.
 
 #### Returns
+
 `LinkedList` An instance of a new list.
 
 ### Print
