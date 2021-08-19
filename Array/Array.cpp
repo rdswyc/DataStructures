@@ -23,6 +23,26 @@ void Autofill(T array[], int size)
     array[i] = Autofill_RandString();
 }
 
+int BinarySearch(T array[], int size, T item)
+{
+  int left = 0;
+  int right = size - 1;
+
+  while (left <= right)
+  {
+    int middle = floor((left + right) / 2);
+
+    if (CompareItems(array[middle], item) < 0)
+      left = middle + 1;
+    else if (CompareItems(array[middle], item) > 0)
+      right = middle - 1;
+    else
+      return middle;
+  }
+
+  return -1;
+}
+
 void Clear(T array[], int size)
 {
   for (int i = 0; i < size; i++)

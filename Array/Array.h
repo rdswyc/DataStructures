@@ -12,6 +12,7 @@ typedef char *T;
 #pragma region Method headers
 
 void Autofill(T array[], int size);
+int BinarySearch(T array[], int size, T item);
 void Clear(T array[], int size);
 int CompareItems(T item1, T item2);
 int IndexOf(T array[], int size, T item);

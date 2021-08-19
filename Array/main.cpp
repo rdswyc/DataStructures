@@ -34,7 +34,8 @@ int main()
       printf("\n**** Choose an option:  ****\n");
       printf("**   1 Set value. 2 Reset value. 3. Clear array\n");
       printf("**   4 Index of. 5 Last index of. 6 Print array.\n");
-      printf("**   7 Reverse array. 8 Sort array. 9 Autofill array.\n");
+      printf("**   7 Reverse array. 8 Sort array. 9 Binary search.\n");
+      printf("**   10 Autofill array.\n");
       printf("**   0 Exit.\n");
     }
 
@@ -116,6 +117,14 @@ int main()
       break;
 
     case 9:
+    {
+      T value = GetInput("Binary search. Make sure the array is sorted!\nEnter item value: ");
+      int index = BinarySearch(array, size, value);
+      printf("Index is %i\n", index);
+    }
+    break;
+
+    case 10:
       printf("Autofill array.\n");
       Autofill(array, size);
       break;
