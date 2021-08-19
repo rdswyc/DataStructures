@@ -20,7 +20,7 @@ List opened in both ends, allowing insertions and removals at any element, as we
 There are two internal implementations, one with a simple link to the next element, and another one with a double link between the next and the previous elements.
 
 * **Binary tree**
-A balanced binary search tree, with node count, leaves and non-leaves count, height and paths information.
+A binary search tree, with node count, leaves and non-leaves count, height and paths information.
 It has two search functions, one by key and another one by value.
 Additionally, it implements a cool pretty print method.
 
@@ -53,7 +53,7 @@ Comparison table of some common operations in the worst case scenario using the 
 | Binary search tree | Add | O(log n) |
 | Binary search tree | Count | O(n) |
 | Binary search tree | Find | O(log n) |
-| Binary search tree | Remove | O(log n) |
+| Binary search tree | Remove | O(n) |
 | Linked list | Add | O(1) |
 | Linked list | Count | O(n) |
 | Linked list | Find | O(n) |

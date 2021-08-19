@@ -9,8 +9,6 @@ A tree height is the number of nodes existing from the root to the far-most leaf
 
 A tree is called binary search tree if the left node key is smaller than the root node key, and the right node key is greater than the root node key. Additionally, every node has a unique key.
 
-A binary tree may also be balanced, when each subtree of every node has a similar, if not equal, height.
-
 ## Implementation
 
 The source code for this solution was divided into three files.
@@ -28,7 +26,7 @@ gcc BinaryTree.cpp main.cpp -o BinaryTree
 
 ## Remarks
 
-This implementation represents a binary search tree, balanced whenever a new node is added.
+This implementation represents a binary search tree.
 
 The structure is so that every `Node` has a `TKey` key and a `TValue` value.
 
@@ -143,7 +141,7 @@ The binary tree to clear.
 ### Contains
 
 Checks if a given `TKey` exists within the `Tree` nodes.
-This is a `O(log n)` operation, since the tree is balanced and not all nodes need to be searched.
+This is a `O(log n)` operation, since not all nodes need to be searched.
 
 ```
 bool Contains(Tree tree, TKey key);
@@ -164,7 +162,7 @@ The key to check.
 ### Find
 
 Finds and returns a `Node` pointer, when a `TKey` exists within the `Tree` nodes.
-This is a `O(log n)` operation, since the tree is balanced and not all nodes need to be searched.
+This is a `O(log n)` operation, since not all nodes need to be searched.
 
 ```
 Node *Find(Tree tree, TKey key);
@@ -314,8 +312,8 @@ The binary tree to show.
 
 ### Remove
 
-Remove a node from the `Tree`.
-This is a `O(log n)` operation.
+Remove a node from the `Tree`, considering three possible scenarios for the node to be deleted: it is a leaf, it has one child and it has two children.
+This is a `O(n)` operation, where the worst case is so that `n` is the height of the tree.
 
 ```
 void Remove(Tree *tree, TKey key);

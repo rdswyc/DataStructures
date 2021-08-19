@@ -58,7 +58,18 @@ int main()
     break;
 
     case 2:
-      break;
+    {
+      printf("Remove tree node.\nEnter key: ");
+      TKey key;
+      scanf("%ld", &key);
+
+      Node *node = Find(tree, key);
+      if (node == NULL)
+        printf("Node not found!\n");
+      else
+        Remove(&tree, key);
+    }
+    break;
 
     case 3:
       printf("Clear tree.\n");

@@ -46,7 +46,6 @@ int Height(Tree tree)
 
 #pragma region Methods
 
-/* TODO: add balanced search tree logic */
 void Add(Tree *tree, TKey key, TValue value)
 {
   if (*tree == NULL)
@@ -241,6 +240,48 @@ void ShowTree(Tree tree, int height)
   }
 }
 
-/* TODO: implement remove */
+void Remove(Tree *tree, TKey key)
+{
+  if (*tree == NULL)
+    return;
+
+  if ((*tree)->key > key)
+    Remove(&(*tree)->left, key);
+  else if ((*tree)->key < key)
+    Remove(&(*tree)->right, key);
+  else
+  {
+    if (&(*tree)->left == NULL)
+    {
+      Node *temp = (*tree)->right;
+      free(*tree);
+      *tree = temp;
+    }
+    else if ((*tree)->right == NULL)
+    {
+      Node *temp = (*tree)->left;
+      free(*tree);
+      *tree = temp;
+    }
+    else
+    {
+      Node *parent = *tree;
+
+      Node *next;
+      for (next = (*tree)->right; next->left != NULL; next = next->left)
+        parent = next;
+
+      if (parent != *tree)
+        parent->left = next->right;
+      else
+        parent->right = next->right;
+
+      (*tree)->key = next->key;
+      strcpy((*tree)->value, next->value);
+
+      free(next);
+    }
+  }
+}
 
 #pragma endregion
