@@ -27,8 +27,9 @@ Additionally, it implements a cool pretty print method.
 * **Graph**
 Finite graph with two implementations: one using the adjacent matrix and another one using a linked list.
 
-* **Hashtable**
+* **Hash table**
 An associative array that maps keys to values for fast look-up.
+It implements a simple hash function and handles collision using open addressing.
 
 ## Standard operations
 
@@ -54,6 +55,10 @@ Comparison table of some common operations in the worst case scenario using the 
 | Binary search tree | Count | O(n) |
 | Binary search tree | Find | O(log n) |
 | Binary search tree | Remove | O(n) |
+| Hash table | Count | O(1) |
+| Hash table | Get | O(1) |
+| Hash table | Remove | O(1) |
+| Hash table | Set | O(1) |
 | Linked list | Add | O(1) |
 | Linked list | Count | O(n) |
 | Linked list | Find | O(n) |
