@@ -157,7 +157,8 @@ The key to check.
 
 #### Returns
 
-`bool` true if an item is found, false otherwise.
+`bool`
+True if an item is found, false otherwise.
 
 ### Find
 
@@ -178,12 +179,13 @@ The key to search.
 
 #### Returns
 
-`Node` A pointer to the node found, or `NULL` if not found.
+`Node`
+A pointer to the node found, or `NULL` if not found.
 
 ### FindValue
 
 Finds and returns a `Node` pointer, based on a `TValue`, which can be a static string or a pointer to a character array.
-It uses a `Equals(TValue, TValue)` function to determine if items are equal.
+It uses the `Equals(TValue, TValue)` function to determine if items are equal.
 This is a `O(n)` operation, because all nodes need to be searched.
 
 ```
@@ -200,7 +202,8 @@ The value to search.
 
 #### Returns
 
-`Node` A pointer to the node found, or `NULL` if not found.
+`Node`
+A pointer to the node found, or `NULL` if not found.
 
 ### Initialize
 
@@ -228,7 +231,8 @@ It starts with 0 and increases as the tree build up continues.
 
 #### Returns
 
-`Tree` An instance of a new tree.
+`Tree`
+An instance of a new tree.
 
 ### PrintNode
 

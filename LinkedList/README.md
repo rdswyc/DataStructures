@@ -111,7 +111,8 @@ The value of the new node.
 
 #### Returns
 
-`Node` A pointer to the node added.
+`Node`
+A pointer to the node added.
 
 ### AddBefore
 
@@ -135,7 +136,8 @@ The value of the new node.
 
 #### Returns
 
-`Node` A pointer to the node added.
+`Node`
+A pointer to the node added.
 
 ### AddFirst
 
@@ -156,7 +158,8 @@ The value of the new node.
 
 #### Returns
 
-`Node` A pointer to the node added.
+`Node`
+A pointer to the node added.
 
 ### AddLast
 
@@ -177,7 +180,8 @@ The value of the new node.
 
 #### Returns
 
-`Node` A pointer to the node added.
+`Node`
+A pointer to the node added.
 
 ### Clear
 
@@ -196,7 +200,7 @@ The linked list to clear.
 ### Contains
 
 Checks if a given `T` item exists within the `LinkedList` nodes.
-It uses a `Equals(T, T)` function to determine if items are equal.
+It uses the `Equals(T, T)` function to determine if items are equal.
 This is a `O(n)` operation, since all nodes need to be searched.
 
 ```
@@ -213,7 +217,8 @@ The value to check.
 
 #### Returns
 
-`bool` true if an item is found, false otherwise.
+`bool`
+True if an item is found, false otherwise.
 
 ### Find
 
@@ -253,7 +258,8 @@ The value to check.
 
 #### Returns
 
-`Node` A pointer to the node found, or `NULL` if not found.
+`Node`
+A pointer to the node found, or `NULL` if not found.
 
 ### Initialize
 
@@ -274,7 +280,8 @@ The size of the linked list to create, meaning the number of nodes from the fist
 
 #### Returns
 
-`LinkedList` An instance of a new list.
+`LinkedList`
+An instance of a new list.
 
 ### Print
 

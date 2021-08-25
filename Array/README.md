@@ -88,7 +88,8 @@ The item to get the index.
 
 #### Returns
 
-`int` the first index of the item in the sorted array, or `-1` if not found.
+`int`
+The first index of the item in the sorted array, or `-1` if not found.
 
 ### Clear
 
@@ -126,12 +127,13 @@ Second array item to compare.
 
 #### Returns
 
-`int` the result of the comparison where negative means `item1` is lower than `item2`, positive means `item1` is greater than `item2` and zero when they are equal.
+`int`
+The result of the comparison where negative means `item1` is lower than `item2`, positive means `item1` is greater than `item2` and zero when they are equal.
 
 ### IndexOf
 
 Checks if a given item `T` exists within the `T[]` array and returns the first index of it.
-It uses a `Equals(T, T)` function to determine if items are equal.
+It uses the `Equals(T, T)` function to determine if items are equal.
 If the item is not found, it returns `-1`.
 This is a `O(n)` operation, since it is a linear search algorithm.
 
@@ -152,12 +154,13 @@ The item to get the index.
 
 #### Returns
 
-`int` the first index of the item in the array, or `-1` if not found.
+`int`
+The first index of the item in the array, or `-1` if not found.
 
 ### LastIndexOf
 
 Checks if a given item `T` exists within the `T[]` array and returns the last index of it.
-It uses a `Equals(T, T)` function to determine if items are equal.
+It uses the `Equals(T, T)` function to determine if items are equal.
 If the item is not found, it returns `-1`.
 This is a `O(n)` operation, since since it is a linear search algorithm.
 
@@ -178,7 +181,8 @@ The item to get the last index.
 
 #### Returns
 
-`int` the last index of the item in the array, or `-1` if not found.
+`int`
+The last index of the item in the array, or `-1` if not found.
 
 ### Print
 

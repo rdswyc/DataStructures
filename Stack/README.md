@@ -76,7 +76,7 @@ The stack to clear.
 ### Contains
 
 Checks if a given item `T` exists within the `Stack` items.
-It uses a `Equals(T, T)` function to determine if items are equal.
+It uses the `Equals(T, T)` function to determine if items are equal.
 This is a `O(n)` operation, since all items need to be searched.
 
 ```
@@ -93,7 +93,8 @@ The item to check.
 
 #### Returns
 
-`bool` true if an item is found, false otherwise.
+`bool`
+True if an item is found, false otherwise.
 
 ### Initialize
 
@@ -114,7 +115,8 @@ The capacity of the stack to create, meaning the number of items it will contain
 
 #### Returns
 
-`Stack` An instance of a new stack.
+`Stack`
+An instance of a new stack.
 
 ### Peek
 
@@ -131,7 +133,8 @@ The stack to peek the item.
 
 #### Returns
 
-`T` A pointer to the item within the stack.
+`T`
+A pointer to the item within the stack.
 
 ### Pop
 
@@ -149,7 +152,8 @@ The stack pointer to remove the item.
 
 #### Returns
 
-`T` The removed item from the stack.
+`T`
+The removed item from the stack.
 
 ### Print
 
