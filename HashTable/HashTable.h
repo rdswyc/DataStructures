@@ -29,7 +29,7 @@ typedef struct
 
 int Buckets(HashTable table);
 int Count(HashTable table);
-float Loadfactor(HashTable table);
+float LoadFactor(HashTable table);
 
 void AutoFill(HashTable *table);
 void Clear(HashTable *table);

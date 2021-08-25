@@ -100,7 +100,7 @@ int main()
       printf("Hash table properties:\n");
       printf("Buckets: %i\n", Buckets(table));
       printf("Count: %i\n", Count(table));
-      printf("Load factor: %.2f\n", Loadfactor(table));
+      printf("Load factor: %.2f\n", LoadFactor(table));
       break;
 
     case 7:

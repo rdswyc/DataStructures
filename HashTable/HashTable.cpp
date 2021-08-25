@@ -25,7 +25,7 @@ int Count(HashTable table)
   return table.itemsCount;
 }
 
-float Loadfactor(HashTable table)
+float LoadFactor(HashTable table)
 {
   return (float)table.itemsCount / (float)table.numberBuckets;
 }
@@ -218,7 +218,7 @@ void Remove(HashTable *table, TKey key)
     }
   }
 
-  if (Loadfactor(*table) < MAX_LOAD_FACTOR / 4)
+  if (LoadFactor(*table) < MAX_LOAD_FACTOR / 4)
     Rehash(table, table->itemsCount);
 }
 
@@ -244,7 +244,7 @@ void Set(HashTable *table, const TKey key, const TValue value)
   table->buckets[i].value = (TValue)malloc(strlen(value));
   strcpy(table->buckets[i].value, value);
 
-  if (Loadfactor(*table) > MAX_LOAD_FACTOR)
+  if (LoadFactor(*table) > MAX_LOAD_FACTOR)
     Rehash(table, 1 + table->numberBuckets);
 }
 
